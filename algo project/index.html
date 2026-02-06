@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home School Route Planner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗺️ Home School Route Planner</h1>
+            <p class="subtitle">Find the shortest path from Home 🏠 to School 🏫 • Drag home/school to move them!</p>
+        </div>
+
+        <div class="controls">
+            <button onclick="findPath()">Find Shortest Path</button>
+            <button onclick="generateRandomWalls()">Generate Random Walls</button>
+            <button onclick="clearWalls()">Clear Walls</button>
+            <button class="reset-btn" onclick="resetGrid()">Reset Everything</button>
+        </div>
+
+        <div class="status" id="status">🏠 Drag the home or school to move them! Click and drag empty cells to draw walls, then find the shortest path!</div>
+
+        <div class="grid-container">
+            <div class="grid" id="grid"></div>
+        </div>
+
+        <div class="info-panel">
+            <div class="info-card">
+                <h3>📏 Path Length</h3>
+                <p id="pathLength">-</p>
+            </div>
+            <div class="info-card">
+                <h3>🔍 Nodes Visited</h3>
+                <p id="nodesVisited">-</p>
+            </div>
+            <div class="info-card">
+                <h3>⏱️ Time Taken</h3>
+                <p id="timeTaken">-</p>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color home"></div>
+                <span>🏠 Home (Start)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color school"></div>
+                <span>🏫 School (End)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color wall"></div>
+                <span>🧱 Wall (Obstacle)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color visited"></div>
+                <span>👁️ Visited Node</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color path"></div>
+                <span>🛤️ Shortest Path</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color current"></div>
+                <span>📍 Current Node</span>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
